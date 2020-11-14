@@ -25,7 +25,7 @@ void msgUser(const char *msg) {
 int main(int argc, char* argv[])
 {
 	msgUser("GPIO Example starting. Press Enter to continue.");
-size_t portCount = 0;
+	size_t portCount = 0;
 	std::vector<std::string> comHubPorts;
 
 	//Create the SysManager object. This object will coordinate actions among various ports

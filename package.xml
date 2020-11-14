@@ -28,7 +28,7 @@
   <!-- The *_depend tags are used to specify dependencies -->
   <buildtool_depend>catkin</buildtool_depend>
   
-  <depend>message_generation</depend>
+  <!-- <depend>message_generation</depend> -->
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   

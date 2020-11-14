@@ -10,7 +10,7 @@ find_package(Threads REQUIRED)
 find_package(catkin REQUIRED
   COMPONENTS
   roscpp
-  # std_msgs
+  std_msgs
   # message_generation
   # sensor_msgs
 )
@@ -31,7 +31,11 @@ include_directories(
 
 catkin_package(
   # INCLUDE_DIRS include include/inc include/inc/inc-private include/inc/inc-private/linux include/inc/inc-private/sFound include/inc/inc-pub include/LibINI/inc include/LibLinuxOS/inc include/LibXML/inc 
-  CATKIN_DEPENDS roscpp # message_runtime std_msgs # sensor_msgs
+  CATKIN_DEPENDS roscpp std_msgs # message_runtime std_msgs # sensor_msgs
+)
+
+add_executable(trash_bot_motor_controller
+  src/trash_bot_motor_controller/trash_bot_motor_controller.cpp
 )
 
 add_executable(Example-GPIO
@@ -95,16 +99,16 @@ add_library(sFoundation
   src/sFoundation/src/sysClassImpl.cpp
   src/sFoundation/src-linux/lnkAccessLinux.cpp
   src/sFoundation/src-linux/SerialLinux.cpp
-  )
-message(${CMAKE_THREAD_LIBS_INIT})
+)
 
 target_link_libraries(sFoundation LibINI LibLinuxOS LibXML ${CMAKE_DL_LIBS})
 
-target_link_libraries(Example-GPIO sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(Example-Homing sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(Example-Motion sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(Example-MultiThreaded sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(Example-SingleThreaded sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(Example-StatusAlerts sFoundation ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(HelloWorld sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(trash_bot_motor_controller sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-GPIO sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-Homing sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-Motion sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-MultiThreaded sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-SingleThreaded sFoundation ${catkin_LIBRARIES})
+target_link_libraries(Example-StatusAlerts sFoundation ${catkin_LIBRARIES})
+target_link_libraries(HelloWorld sFoundation ${catkin_LIBRARIES})
 
