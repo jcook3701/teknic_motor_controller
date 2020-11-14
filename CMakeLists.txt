@@ -34,6 +34,33 @@ catkin_package(
   CATKIN_DEPENDS roscpp # message_runtime std_msgs # sensor_msgs
 )
 
+add_executable(Example-GPIO
+  src/SDK_Examples/Example-GPIO/Example-GPIO.cpp
+)
+
+add_executable(Example-Homing
+  src/SDK_Examples/Example-Homing/Example-Homing.cpp
+)
+
+add_executable(Example-Motion
+  src/SDK_Examples/Example-Motion/Example-Motion.cpp
+)
+
+add_executable(Example-MultiThreaded
+  src/SDK_Examples/Example-MultiThreaded/Example-MultiThreaded.cpp
+  src/SDK_Examples/Example-MultiThreaded/Axis.cpp
+  src/SDK_Examples/Example-MultiThreaded/Supervisor.cpp
+)
+
+add_executable(Example-SingleThreaded
+  src/SDK_Examples/Example-SingleThreaded/Example-SingleThreaded.cpp
+  src/SDK_Examples/Example-SingleThreaded/Axis.cpp
+)
+
+add_executable(Example-StatusAlerts
+  src/SDK_Examples/Example-StatusAlerts/Example-StatusAlerts.cpp
+)
+
 add_executable(HelloWorld
   src/SDK_Examples/HelloWorld/HelloWorld.cpp 
 )
@@ -72,5 +99,12 @@ add_library(sFoundation
 message(${CMAKE_THREAD_LIBS_INIT})
 
 target_link_libraries(sFoundation LibINI LibLinuxOS LibXML ${CMAKE_DL_LIBS})
+
+target_link_libraries(Example-GPIO sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(Example-Homing sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(Example-Motion sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(Example-MultiThreaded sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(Example-SingleThreaded sFoundation ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(Example-StatusAlerts sFoundation ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(HelloWorld sFoundation ${CMAKE_THREAD_LIBS_INIT})
 
