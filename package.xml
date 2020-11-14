@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>teknic_motor_controller</name>
+  <version>1.0.0</version>
+  <description>Teknic Motor Controller that should take commands directly from ROS Move Base package</description>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
+  <!-- Example: -->
+  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+  <maintainer email="none@gmail.com">jcook3701</maintainer>
+  
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!-- BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>MIT</license>
+
+  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+  <!-- Optional attribute type can be: website, bugtracker, or repository -->
+  <!-- Example: -->
+  <!-- <url type="website">http://wiki.ros.org/mavlink_sitl_gazebo</url> -->
+  <url type="repository">https://github.com/PX4/sitl_gazebo</url>
+
+  <!-- Author tags are optional, mutiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
+  <!-- Example: -->
+  <author email="none@gmail.com">jcook3701</author>
+  
+  <!-- The *_depend tags are used to specify dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>message_generation</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  
+</package>
