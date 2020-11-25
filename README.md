@@ -76,7 +76,7 @@ __Motor Parameters:__
 ## Teknic Documentation
 
 [Clearpath SC User Manual](./docs/Clearpath-SC-User-Manual.pdf)  
-__Description:__ This goes over the general setup and configuration of the ClearPath Motors.  
+__Description:__ This goes over the general setup and configuration of ClearPath Motors.  
 
 [S-Foundation Reference](./docs/S-FoundationRef.chm)  
-__Description:__ This goes over the ClearPath software SDK and how to utilize the ClearPath code base.  
+__Description:__ This goes over the ClearPath software SDK in doxygen documentation style.  
