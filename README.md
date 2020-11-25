@@ -2,10 +2,10 @@
 
 ## Table of Contents
 1. [Teknic Motor Controller](#teknic-motor-controller)  
-   1. [Design](#design)  
-   2. [Setup](#setup)  
-   3. [Utiliztion](#utilization)  
-   4. [Configuration Files Breakdown](#configuration-files-breakdown)     
+   1. [Setup](#setup)  
+   2. [Utiliztion](#utilization)  
+   3. [Configuration Files Breakdown](#configuration-files-breakdown)  
+   4. [Teknic Documentation](#teknic-documentation)
 2. [Trash Bot Motor Controller](./src/trash_bot_motor_controller)  
 3. [Teknic Examples](./src/SDK_Examples)  
    1. [Example GPIO](./src/SDK_Examples/Example-GPIO)  
@@ -72,3 +72,8 @@ __Motor Parameters:__
    - __Description:__ Max acceleration that the motor may reach when ramping to the specified velocity.  
 3. Max Motor Torque Percentage
    - __Description:__ Max percentage of available torque that the motor may use when operating.  
+
+## Teknic Documentation
+
+[Clearpath SC User Manual](./docs/Clearpath-SC-User-Manual.pdf)  
+[S-Foundation Reference](./docs/S-FoundationRef.chm)  
