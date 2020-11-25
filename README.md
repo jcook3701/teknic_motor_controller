@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Teknic Motor Controller](#teknic-motor-controller)  
+   1. [Requirements](#requirements)  
    1. [Setup](#setup)  
    2. [Utiliztion](#utilization)  
    3. [Configuration Files Breakdown](#configuration-files-breakdown)  
@@ -17,9 +18,9 @@
    7. [HelloWorld](./src/SDK_Examples/HelloWorld)  
 
 ## Requirements
-1. 
+The following files are recommended for installation:  
 ```
-$ sudo apt install ros-melodic-teleop-twist-keyboard
+$ sudo apt install ros-melodic-teleop-twist-keyboard  
 ```
 
 ## Setup
@@ -58,7 +59,7 @@ $ roslaunch teknic_motor_controller trash_bot_motor_controller.launch
 
 __Note:__  The following assumptions are being made when using this motor controller.  
 1. Each motor is driving two wheels.  Each wheel has its own chain that connects it to either the left or the right motor.  
-2. Motor orientation is the following:
+2. Motor orientation is the following:  
 ```
   (L)  (R)  
 ---[]  []---  
@@ -66,17 +67,17 @@ __Note:__  The following assumptions are being made when using this motor contro
 3. There are exactly four wheels.  This could be modified in the future with an additional parameter to the vehicle configuration file.  
 
 __Vehicle Parameters:__  
-1. Number of Motors
+1. Number of Motors  
    - __Description:__ Number of motors being used on vehicle.  It is assumed that this number will be even with a minimum of two motors.  
-2. Gear Ratio
+2. Gear Ratio  
    - __Description:__ Gear ratio between motor and single tire rotation.  
 
 __Motor Parameters:__  
-1. Max Motor Velocity
+1. Max Motor Velocity  
    - __Description:__ Max velocity that the motor may reach during operations.  
-2. Max Motor Acceleration
+2. Max Motor Acceleration  
    - __Description:__ Max acceleration that the motor may reach when ramping to the specified velocity.  
-3. Max Motor Torque Percentage
+3. Max Motor Torque Percentage  
    - __Description:__ Max percentage of available torque that the motor may use when operating.  
 
 ## Teknic Documentation
