@@ -79,4 +79,4 @@ __Motor Parameters:__
 __Description:__ This goes over the general setup and configuration of ClearPath Motors.  
 
 [S-Foundation Reference](./docs/S-FoundationRef.chm)  
-__Description:__ This goes over the ClearPath software SDK in doxygen documentation style.  
+__Description:__ This goes over the ClearPath SDK.  
