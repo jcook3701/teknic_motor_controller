@@ -1,0 +1,3 @@
+max_motor_velocity: 1000
+max_motor_acceleration: 10
+max_motor_torque_percentage: 100

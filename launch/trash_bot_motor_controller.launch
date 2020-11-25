@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="teknic_motor_controller"  type="trash_bot_motor_controller" name="trash_bot_motor_controller" output="screen">
+    <rosparam file="$(find teknic_motor_controller)/config/vehicle_parameters.yaml" command="load" ns="vehicle_parameters" />
+    <rosparam file="$(find teknic_motor_controller)/config/motor_parameters.yaml" command="load" ns="motor_parameters" />
+
+    <remap from="cmd_vel" to="cmd_vel"/>
+    <!-- <param name="" value=""/> -->
+  </node>
+  
+</launch>
