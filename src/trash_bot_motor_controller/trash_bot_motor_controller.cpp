@@ -12,9 +12,7 @@ using namespace sFnd;
 
 void cmdVelCallback(const geometry_msgs::Twist& msg)
 {
-  if (msg.angular.z > 0){
-    ROS_INFO_STREAM("Subscriber velocities:"<<" linear="<<msg.linear.x<<" angular="<<msg.angular.z);
-  }
+  ROS_INFO_STREAM("Subscriber velocities:" << " linear=(" << msg.linear.x << ", " << msg.linear.y << ", " << msg.linear.z <<") angular=("<< msg.angular.x << ", " << msg.angular.y << ", " << msg.angular.z << ")");
 }
 
 
@@ -23,12 +21,19 @@ int main(int argc, char* argv[]){
   ros::NodeHandle nh("~");
   ros::Subscriber cmd_vel_sub = nh.subscribe("cmd_vel", 1000, cmdVelCallback);
 
+  std::string cmd_vel; 
+  
   int max_motor_velocity;
   int max_motor_acceleration;
   int max_motor_torque;
 
   std::vector<int> gear_ratio;
   int number_of_motors;
+
+  if(!nh.getParam("cmd_vel", cmd_vel)) {
+    nh.setParam("cmd_vel", "cmd_vel");
+    nh.getParam("cmd_vel", cmd_vel);
+  }
   
   if(!nh.getParam("motor_parameters/max_motor_velocity", max_motor_velocity)) {
     nh.setParam("motor_parameters/max_motor_velocity", 0);

@@ -16,6 +16,12 @@
    6. [Example StatusAlerts](./src/SDK_Examples/Example-StatusAlerts)  
    7. [HelloWorld](./src/SDK_Examples/HelloWorld)  
 
+## Requirements
+1. 
+```
+$ sudo apt install ros-melodic-teleop-twist-keyboard
+```
+
 ## Setup
 1. Create ROS Workspace.  
 ```
