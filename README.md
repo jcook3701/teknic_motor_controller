@@ -1,5 +1,12 @@
 # Teknic Motor Controller
 
+## Table of Contents
+1. [Design](#design)
+2. [Setup](#setup)
+3. [Utiliztion](#utilization)
+4. [Configuration Files Breakdown](#configuration_files_breakdown)
+
+
 ## Design
 The current design is to take the output from either move_base or key_teleop (cmd_vel - geometry_msg/twist) and convert that into motor velocities for the left and right side motors.  
 
@@ -50,7 +57,7 @@ __Note:__  The following assumptions are being made when using this motor contro
 
 __Vehicle Parameters:__  
 1. Number of Motors
-   - __Description:__ Number of motors being used on vehicle.  
+   - __Description:__ Number of motors being used on vehicle.  It is assumed that this number will be even with a minimum of two motors.  
 2. Gear Ratio
    - __Description:__ Gear ratio between motor and single tire rotation.  
 
