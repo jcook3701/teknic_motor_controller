@@ -1,16 +1,20 @@
 # Teknic Motor Controller
 
 ## Table of Contents
-1. [Design](#design)
-2. [Setup](#setup)
-3. [Utiliztion](#utilization)
-4. [Configuration Files Breakdown](#configuration_files_breakdown)
-
-
-## Design
-The current design is to take the output from either move_base or key_teleop (cmd_vel - geometry_msg/twist) and convert that into motor velocities for the left and right side motors.  
-
-__Note:__ When we use move_base (nav_ros - TrajectoryPlannerROS) we will have to make sure that the linear velocity and acceleration parameters (min and max) correlate correctly with the motor angular velocity and acceleration parameters(max).  
+1. [Teknic Motor Controller](#teknic-motor-controller)  
+   1. [Design](#design)  
+   2. [Setup](#setup)  
+   3. [Utiliztion](#utilization)  
+   4. [Configuration Files Breakdown](#configuration-files-breakdown)     
+2. [Trash Bot Motor Controller](./src/trash_bot_motor_controller)  
+3. [Teknic Examples](./src/SDK_Examples)  
+   1. [Example GPIO](./src/SDK_Examples/Example-GPIO)  
+   2. [Example Homing](./src/SDK_Examples/Example-Homing)  
+   3. [Example Motion](./src/SDK_Examples/Example-Motion)  
+   4. [Example MultiThreaded](./src/SDK_Examples/Example-MultiThreaded)  
+   5. [Example SingleThreaded](./src/SDK_Examples/Example-SingleThreaded)  
+   6. [Example StatusAlerts](./src/SDK_Examples/Example-StatusAlerts)  
+   7. [HelloWorld](./src/SDK_Examples/HelloWorld)  
 
 ## Setup
 1. Create ROS Workspace.  
