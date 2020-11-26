@@ -7,6 +7,7 @@
    2. [Utiliztion](#utilization)  
    3. [Configuration Files Breakdown](#configuration-files-breakdown)  
    4. [Teknic Documentation](#teknic-documentation)
+   5. [Helpful Links](#helpful-links)  
 2. [Trash Bot Motor Controller](./src/trash_bot_motor_controller)  
 3. [Teknic Examples](./src/SDK_Examples)  
    1. [Example GPIO](./src/SDK_Examples/Example-GPIO)  
@@ -87,3 +88,7 @@ __Description:__ This goes over the general setup and configuration of ClearPath
 
 [S-Foundation Reference](./docs/S-FoundationRef.chm)  
 __Description:__ This goes over the ClearPath SDK.  
+
+
+## Helpful Links
+[Differential Drive Kinematics](http://www.cs.columbia.edu/~allen/F15/NOTES/icckinematics.pdf)
