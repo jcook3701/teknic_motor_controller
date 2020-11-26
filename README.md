@@ -91,4 +91,5 @@ __Description:__ This goes over the ClearPath SDK.
 
 
 ## Helpful Links
-[Differential Drive Kinematics](http://www.cs.columbia.edu/~allen/F15/NOTES/icckinematics.pdf)
+[Differential Drive Kinematics](http://www.cs.columbia.edu/~allen/F15/NOTES/icckinematics.pdf)  
+[Control of Mobile Robots- 2.2 Differential Drive Robots](https://www.youtube.com/watch?v=aE7RQNhwnPQ&ab_channel=mouhknowsbest)  
