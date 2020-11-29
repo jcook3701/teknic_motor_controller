@@ -1,3 +1,5 @@
 number_of_motors: 2
 gear_ratio: [4, 1]
+wheel_base: 1
+wheel_radius: 1
 

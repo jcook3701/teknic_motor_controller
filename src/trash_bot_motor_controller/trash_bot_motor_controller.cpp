@@ -21,14 +21,18 @@ int main(int argc, char* argv[]){
   ros::NodeHandle nh("~");
   ros::Subscriber cmd_vel_sub = nh.subscribe("cmd_vel", 1000, cmdVelCallback);
 
-  std::string cmd_vel; 
+  std::string cmd_vel;
   
-  int max_motor_velocity;
-  int max_motor_acceleration;
-  int max_motor_torque;
+  double max_motor_velocity;
+  double max_motor_acceleration;
+  double max_motor_torque;
 
+  int number_of_motors;  
   std::vector<int> gear_ratio;
-  int number_of_motors;
+  double wheel_base;
+  double wheel_radius;
+
+
 
   if(!nh.getParam("cmd_vel", cmd_vel)) {
     nh.setParam("cmd_vel", "cmd_vel");
@@ -60,7 +64,16 @@ int main(int argc, char* argv[]){
     nh.getParam("vehicle_parameters/gear_ratio",  gear_ratio);
   }
 
+  if(!nh.getParam("vehicle_parameters/wheel_base", wheel_base)) {
+    nh.setParam("vehicle_parameters/wheel_base", 0);
+    nh.getParam("vehicle_parameters/wheel_base",  wheel_base);
+  }
 
+  if(!nh.getParam("vehicle_parameters/wheel_radius", wheel_radius)) {
+    nh.setParam("vehicle_parameters/wheel_radius", 0);
+    nh.getParam("vehicle_parameters/wheel_radius",  wheel_radius);
+  }
+    
   
   ROS_INFO_STREAM("max_motor_velocity: " << max_motor_velocity);
   ROS_INFO_STREAM("max_motor_acceleration: " << max_motor_acceleration);
@@ -68,6 +81,8 @@ int main(int argc, char* argv[]){
 
   ROS_INFO_STREAM("number_of_motors: " << number_of_motors);
   ROS_INFO_STREAM("gear_ratio: " << gear_ratio[0] << ":" << gear_ratio[1]);
+  ROS_INFO_STREAM("wheel_base: " << wheel_base);
+  ROS_INFO_STREAM("wheel_radius: " << wheel_radius);
   
   ros::spin();
   

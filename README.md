@@ -72,6 +72,10 @@ __Vehicle Parameters:__
    - __Description:__ Number of motors being used on vehicle.  It is assumed that this number will be even with a minimum of two motors.  
 2. Gear Ratio  
    - __Description:__ Gear ratio between motor and single tire rotation.  
+3. Wheel Base:
+   - __Description:__ The length of the wheel base in meters.  
+4. Wheel Radius:
+   - __Description:__ The length of the wheel radius in meters.  
 
 __Motor Parameters:__  
 1. Max Motor Velocity  
