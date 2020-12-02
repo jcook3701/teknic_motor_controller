@@ -76,13 +76,19 @@ __Vehicle Parameters:__
    - __Description:__ The length of the wheel base in meters.  
 4. Wheel Radius:
    - __Description:__ The length of the wheel radius in meters.  
+5. Tire Deflection
+   - __Description:__ Deformation of tire at the point of contact  
+6. Diameter Mod
+   - __Description:__ 
 
-__Motor Parameters:__  
-1. Max Motor Velocity  
+__Teknic Motor Parameters:__  
+1. Encoder Resolution
+   - __Description:__ Encoder tics per wheel revolution     
+2. Max Motor Velocity  
    - __Description:__ Max velocity that the motor may reach during operations.  
-2. Max Motor Acceleration  
+3. Max Motor Acceleration  
    - __Description:__ Max acceleration that the motor may reach when ramping to the specified velocity.  
-3. Max Motor Torque Percentage  
+4. Max Motor Torque Percentage  
    - __Description:__ Max percentage of available torque that the motor may use when operating.  
 
 ## Teknic Documentation
