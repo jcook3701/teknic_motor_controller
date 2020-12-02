@@ -104,3 +104,4 @@ __Description:__ This goes over the ClearPath SDK.
 [Differential Drive Kinematics](http://www.cs.columbia.edu/~allen/F15/NOTES/icckinematics.pdf)  
 [Control of Mobile Robots- 2.2 Differential Drive Robots](https://www.youtube.com/watch?v=aE7RQNhwnPQ&ab_channel=mouhknowsbest)  
 [Kinematics of a 4 wheeled differential drive robots](https://robotics.stackexchange.com/questions/2324/kinematics-of-a-4-wheeled-differential-drive-robots)  
+[rosbot kernel headers](https://community.husarion.com/t/linux-header-files-linux-headers-4-4-71husarion5/657/4)  
