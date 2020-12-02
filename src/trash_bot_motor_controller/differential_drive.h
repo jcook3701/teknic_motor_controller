@@ -13,10 +13,11 @@
 
 class differential_drive {
  private:
-    int number_of_motors;
-    std::vector<int> gear_ratio;
-    double wheel_base;
-    double wheel_radius;
+    // Configuration Variables
+    int number_of_motors_;
+    std::vector<int> gear_ratio_;
+    double wheel_base_;
+    double wheel_radius_;
 
  public:
     // Constructor & Destructor
