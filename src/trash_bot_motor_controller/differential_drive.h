@@ -36,7 +36,7 @@ class differential_drive {
     std::vector<int> get_gear_ratio();
     double get_wheel_base();
     double get_wheel_radius();
-    
-    
-}
+        
+};
+
 #endif

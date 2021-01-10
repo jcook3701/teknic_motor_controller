@@ -17,10 +17,10 @@ void msgUser(const char *msg) {
 //sequential repeated moves on each axis.
 //*********************************************************************************
 
-#define ACC_LIM_RPM_PER_SEC	100000
-#define VEL_LIM_RPM			700
-#define MOVE_DISTANCE_CNTS	10000	
-#define NUM_MOVES			5
+#define ACC_LIM_RPM_PER_SEC	10
+#define VEL_LIM_RPM			7
+#define MOVE_DISTANCE_CNTS	10	
+#define NUM_MOVES			1
 #define TIME_TILL_TIMEOUT	10000	//The timeout used for homing(ms)
 
 int main(int argc, char* argv[])

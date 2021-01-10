@@ -40,9 +40,9 @@ using namespace std;
  * 																		!0!	*/
 #define RAS_CODE			3 
 #define TRQ_PCT				100
-#define ACC_LIM_RPM_PER_SEC	8000
-#define VEL_LIM_RPM			2000
-#define TRACKING_LIM		(m_node->Info.PositioningResolution.Value() / 4)
+#define ACC_LIM_RPM_PER_SEC	        100
+#define VEL_LIM_RPM			500
+#define TRACKING_LIM		(m_node->Info.PositioningResolution.Value() / 8)
 /* !end!																	*
  ****************************************************************************/
 

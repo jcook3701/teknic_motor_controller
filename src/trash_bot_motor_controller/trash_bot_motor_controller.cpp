@@ -5,12 +5,10 @@
 
 // #include <stdio.h>
 // #include <iostream>
-// #include "pubSysCls.h"
-
+#include "pubSysCls.h"
 #include "differential_drive.h"
 
-using namespace sFnd;	
-
+using namespace sFnd;
 
 void cmdVelCallback(const geometry_msgs::Twist& msg)
 {
@@ -34,11 +32,9 @@ int main(int argc, char* argv[]){
     double wheel_base;
     double wheel_radius;
     
-
-    
     if(!nh.getParam("cmd_vel", cmd_vel)) {
-	nh.setParam("cmd_vel", "cmd_vel");
-	nh.getParam("cmd_vel", cmd_vel);
+        nh.setParam("cmd_vel", cmd_vel);
+        nh.getParam("cmd_vel", cmd_vel);
     }
     
     if(!nh.getParam("motor_parameters/max_motor_velocity", max_motor_velocity)) {
@@ -75,8 +71,7 @@ int main(int argc, char* argv[]){
 	nh.setParam("vehicle_parameters/wheel_radius", 0);
 	nh.getParam("vehicle_parameters/wheel_radius",  wheel_radius);
     }
-    
-    
+        
     ROS_INFO_STREAM("max_motor_velocity: " << max_motor_velocity);
     ROS_INFO_STREAM("max_motor_acceleration: " << max_motor_acceleration);
     ROS_INFO_STREAM("max_motor_torque: " << max_motor_torque);

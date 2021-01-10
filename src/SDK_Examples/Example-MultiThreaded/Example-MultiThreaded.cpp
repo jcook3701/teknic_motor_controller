@@ -144,18 +144,24 @@ int main(int argc, char* argv[])
 					}
 					else {
 						// Set the move distance based on where it is in the network
-						listOfAxes.at(iNode)->SetMoveRevs((iNode + 1) * 2);
-						// Set the trigger group indicator
-						theNode.Motion.Adv.TriggerGroup(1);
+					  if(iNode == 0) {
+					    listOfAxes.at(iNode)->SetMoveRevs(24);
+					  }
+					  if(iNode == 1) {
+					    listOfAxes.at(iNode)->SetMoveRevs(-24);
+					  }
+					  // Set the trigger group indicator
+					  theNode.Motion.Adv.TriggerGroup(1);
 					}
 				}
 
 			}
-
+			/*
 #if 0
 			// Set the last node in the ring to a longer move
 			listOfAxes.at(listOfAxes.size()-1)->SetMoveRevs(listOfAxes.size()*10);
 #endif
+			*/
 		}
 
 		// If we have full access to the nodes and they are all ClearPath-SC advanced nodes, 
