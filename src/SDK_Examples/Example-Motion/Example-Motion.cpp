@@ -1,5 +1,6 @@
 //Required include files
-#include <Windows.h>
+// #include <Windows.h>
+#include <unistd.h>
 #include <stdio.h>	
 #include <string>
 #include <iostream>
@@ -43,8 +44,8 @@ int main(int argc, char* argv[])
 
 	//Create the SysManager object. This object will coordinate actions among various ports
 	// and within nodes. In this example we use this object to setup and open our port.
-	SysManager* myMgr = SysManager::Instance();							//Create System Manager myMgr
-
+	// SysManager* myMgr = SysManager::Instance();							//Create System Manager myMgr
+	SysManager myMgr;
 																		//This will try to open the port. If there is an error/exception during the port opening,
 																		//the code will jump to the catch loop where detailed information regarding the error will be displayed;
 																		//otherwise the catch loop is skipped over
@@ -56,7 +57,7 @@ int main(int argc, char* argv[])
 
 		for (portCount = 0; portCount < comHubPorts.size() && portCount < NET_CONTROLLER_MAX; portCount++) {
 
-			myMgr->ComHubPort(portCount, comHubPorts[portCount].c_str()); 	//define the first SC Hub port (port 0) to be associated 
+			myMgr.ComHubPort(portCount, comHubPorts[portCount].c_str()); 	//define the first SC Hub port (port 0) to be associated 
 																			// with COM portnum (as seen in device manager)
 		}
 
@@ -69,10 +70,10 @@ int main(int argc, char* argv[])
 			return -1;  //This terminates the main program
 		}
 		//printf("\n I will now open port \t%i \n \n", portnum);
-		myMgr->PortsOpen(portCount);				//Open the port
+		myMgr.PortsOpen(portCount);				//Open the port
 
 		for (size_t i = 0; i < portCount; i++) {
-			IPort &myPort = myMgr->Ports(i);
+			IPort &myPort = myMgr.Ports(i);
 
 			printf(" Port[%d]: state=%d, nodes=%d\n",
 				myPort.NetNumber(), myPort.OpenState(), myPort.NodeCount());
@@ -90,19 +91,19 @@ int main(int argc, char* argv[])
 
 				theNode.EnableReq(false);				//Ensure Node is disabled before loading config file
 
-				myMgr->Delay(200);
+				myMgr.Delay(200);
 
 				theNode.Status.AlertsClear();					//Clear Alerts on node 
 				theNode.Motion.NodeStopClear();	//Clear Nodestops on Node  				
 				theNode.EnableReq(true);					//Enable node 
 															//At this point the node is enabled
 				printf("Node \t%zi enabled\n", iNode);
-				double timeout = myMgr->TimeStampMsec() + TIME_TILL_TIMEOUT;	//define a timeout in case the node is unable to enable
+				double timeout = myMgr.TimeStampMsec() + TIME_TILL_TIMEOUT;	//define a timeout in case the node is unable to enable
 																				//This will loop checking on the Real time values of the node's Ready status
 				while (!theNode.Motion.IsReady()) {
-					if (myMgr->TimeStampMsec() > timeout) {
+					if (myMgr.TimeStampMsec() > timeout) {
 						printf("Error Node Setup: Timed out waiting for Node %d to enable\n", iNode);
-						Sleep(60000);
+						sleep(60000);
 						//msgUser("Press any key to continue."); //pause so the user can see the error message; waits for user to press a key
 						return -2;
 					}
@@ -134,7 +135,7 @@ int main(int argc, char* argv[])
 						myPort.BrakeControl.BrakeSetting(1, GPO_ON);
 
 					if ((Node0_GPIO[i - 1] != Node0_GPIO[i]) || (Node1_GPIO[i - 1] != Node1_GPIO[i]))
-						Sleep(20000); //wait for acctuator
+						sleep(20000); //wait for acctuator
 				}
 
 				for (size_t iNode = 0; iNode < myPort.NodeCount(); iNode++) {
@@ -169,12 +170,12 @@ int main(int argc, char* argv[])
 
 				theNode0.Motion.Adv.TriggerMovesInMyGroup();
 
-				double timeout = myMgr->TimeStampMsec() + theNode0.Motion.MovePosnDurationMsec(MOVE_DISTANCE_CNTS) + 80000;
+				double timeout = myMgr.TimeStampMsec() + theNode0.Motion.MovePosnDurationMsec(MOVE_DISTANCE_CNTS) + 80000;
 
 				while (!theNode0.Motion.MoveIsDone()) {
-					if (myMgr->TimeStampMsec() > timeout) {
+					if (myMgr.TimeStampMsec() > timeout) {
 						printf("Error command 1: Timed out waiting for move to complete\n");
-						Sleep(20000);//						
+						sleep(20000);//						
 						msgUser("Press any key to continue."); //pause so the user can see the error message; waits for user to press a key
 						return -2;
 					}
@@ -195,9 +196,9 @@ int main(int argc, char* argv[])
 						theNode0.Motion.Adv.TriggerMovesInMyGroup();
 
 						while (!theNode0.Motion.MoveIsDone()) {
-							if (myMgr->TimeStampMsec() > timeout) {
+							if (myMgr.TimeStampMsec() > timeout) {
 								printf("Error command 1: Timed out waiting for move to complete\n");
-								Sleep(20000);//						
+								sleep(20000);//						
 								msgUser("Press any key to continue."); //pause so the user can see the error message; waits for user to press a key
 								return -2;
 							} //end if
@@ -231,12 +232,12 @@ int main(int argc, char* argv[])
 		printf("Caught error: addr=%d, err=0x%08x\nmsg=%s\n", theErr.TheAddr, theErr.ErrorCode, theErr.ErrorMsg);
 
 		msgUser("Press any key to continue."); //pause so the user can see the error message; waits for user to press a key
-		Sleep(10000);
+		sleep(10000);
 		return -5;  //This terminates the main program
 	}
 
 	// Close down the ports
-	myMgr->PortsClose();
+	myMgr.PortsClose();
 	printf("leaving soon");
 	//Sleep(1000);
 	msgUser("Press any key to continue - end of cmd."); //pause so the user can see the error message; waits for user to press a key
